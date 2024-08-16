@@ -1,33 +1,30 @@
-using System;
 using cAlgo.API;
-using cAlgo.API.Collections;
-using cAlgo.API.Indicators;
-using cAlgo.API.Internals;
+using Olimpi.features.custom_life_cycle.domain.application.services;
+using Olimpi.features.custom_life_cycle.domain.entities;
+using Olimpi.features.custom_life_cycle.domain.interfaces;
 
-namespace cAlgo.Robots
+namespace Olimpi
 {
     [Robot(AccessRights = AccessRights.None, AddIndicators = true)]
     public class Olimpi : Robot
-    {
-        [Parameter(DefaultValue = "Hello world!")]
-        public string Message { get; set; }
+    {    
+        private ILifeCycleService _lifeCycleService;
 
         protected override void OnStart()
         {
-            // To learn more about cTrader Automate visit our Help Center:
-            // https://help.ctrader.com/ctrader-automate
+            var context = new OlimpiContext();
+            var stateMachine = new StateMachine<OlimpiContext>(context);
+            
+            _lifeCycleService = new OlimpiLifeCycleService(stateMachine, context);
 
-            Print(Message);
+            _lifeCycleService.OnStart();
         }
 
-        protected override void OnTick()
-        {
-            // Handle price updates here
-        }
+        protected override void OnTick() => _lifeCycleService.OnTick();
+        protected override void OnBar() => _lifeCycleService.OnBar();
 
-        protected override void OnStop()
-        {
-            // Handle cBot stop here
-        }
+        protected override void OnStop() => _lifeCycleService.OnStop();
+
+        protected override void OnError(Error error) => _lifeCycleService.OnError(error.ToString());
     }
 }
