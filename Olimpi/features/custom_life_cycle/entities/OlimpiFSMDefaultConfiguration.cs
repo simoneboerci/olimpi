@@ -18,6 +18,7 @@ namespace Olimpi.features.custom_life_cycle.entities{
                 { OlimpiStateId.Update, new OlimpiUpdateState() },
                 { OlimpiStateId.LateUpdate, new OlimpiLateUpdateState() },
                 { OlimpiStateId.OnApplicationPause, new OlimpiOnApplicationPauseState() },
+                
                 { OlimpiStateId.OnApplicationQuit, new OlimpiOnApplicationQuitState() },
                 { OlimpiStateId.OnDisable, new OlimpiOnDisableState() },
                 { OlimpiStateId.OnDestroy, new OlimpiOnDestroyState() }
@@ -27,7 +28,20 @@ namespace Olimpi.features.custom_life_cycle.entities{
 
             new List<StateTransition<OlimpiContext, OlimpiStateId>>
             {
-                
+                new(OlimpiStateId.Awake, OlimpiStateId.OnEnable, _ => true),
+                new(OlimpiStateId.OnEnable, OlimpiStateId.Reset, _ => true),
+                new(OlimpiStateId.Reset, OlimpiStateId.Start, _ => true),
+                new(OlimpiStateId.Start, OlimpiStateId.FixedUpdate, _ => true),
+                new(OlimpiStateId.FixedUpdate, OlimpiStateId.Update, _ => true),
+                new(OlimpiStateId.Update, OlimpiStateId.LateUpdate, _ => true),
+                new(OlimpiStateId.LateUpdate, OlimpiStateId.OnApplicationPause, _ => true),
+                new(OlimpiStateId.OnApplicationPause, OlimpiStateId.FixedUpdate, _ => true),
+
+                new(OlimpiStateId.OnApplicationPause, OlimpiStateId.OnApplicationQuit, _ => false),
+                new(OlimpiStateId.OnApplicationQuit, OlimpiStateId.OnDisable, _ => true),
+                new(OlimpiStateId.OnDisable, OlimpiStateId.OnDestroy, _ => true),
+
+                new(OlimpiStateId.OnDestroy, OlimpiStateId.Awake, _=> false),
             }
         ){}
     }
