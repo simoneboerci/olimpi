@@ -1,33 +1,25 @@
-using System;
 using cAlgo.API;
-using cAlgo.API.Collections;
-using cAlgo.API.Indicators;
-using cAlgo.API.Internals;
+using Olimpi.core.data.services;
+using Olimpi.core.domain.entities;
+using Olimpi.core.domain.interfaces;
+using Olimpi.features.custom_life_cycle.entities;
 
-namespace cAlgo.Robots
+namespace Olimpi
 {
-    [Robot(AccessRights = AccessRights.None, AddIndicators = true)]
+    [Robot(AccessRights = AccessRights.FullAccess, AddIndicators = true)]
     public class Olimpi : Robot
-    {
-        [Parameter(DefaultValue = "Hello world!")]
-        public string Message { get; set; }
+    {   
+        private IStateMachine<OlimpiContext, OlimpiStateId> _stateMachine;
+        private StateMachineConfigurationBase<OlimpiContext, OlimpiStateId> _stateMachineConfiguration;
 
-        protected override void OnStart()
+        protected override void OnStart() => InitializeStateMachine();
+
+        protected override void OnTick() => _stateMachine.Update();
+
+        private void InitializeStateMachine()
         {
-            // To learn more about cTrader Automate visit our Help Center:
-            // https://help.ctrader.com/ctrader-automate
-
-            Print(Message);
-        }
-
-        protected override void OnTick()
-        {
-            // Handle price updates here
-        }
-
-        protected override void OnStop()
-        {
-            // Handle cBot stop here
+            _stateMachine = StateMachineFactory.Create<OlimpiContext, OlimpiStateId>();
+            StateMachineConfigurator.Configure(_stateMachine, new OlimpiFSMDefaultConfiguration());
         }
     }
 }
