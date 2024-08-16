@@ -1,6 +1,6 @@
 using System;
 
-namespace Olimpi.features.custom_life_cycle.domain.interfaces
+namespace Olimpi.core.domain.interfaces
 {
     public interface IState<TContext, TStateId> where TContext : IStateMachineContext where TStateId : Enum
     {
