@@ -1,8 +1,8 @@
 using System;
-using Olimpi.core.domain.entities;
-using Olimpi.core.domain.interfaces;
+using Olimpi.Core.Domain.Entities;
+using Olimpi.Core.Domain.Interfaces;
 
-namespace Olimpi.core.data.services{
+namespace Olimpi.Core.Data.Services{
     public class StateMachineConfigurator {
         public static void Configure<TContext, TStateId>(IStateMachine<TContext, TStateId> stateMachine, StateMachineConfigurationBase<TContext, TStateId> configuration) where TContext : IStateMachineContext where TStateId : Enum{
             foreach(var state in configuration.States){

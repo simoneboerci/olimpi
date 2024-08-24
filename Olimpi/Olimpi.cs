@@ -1,8 +1,8 @@
 using cAlgo.API;
-using Olimpi.core.data.services;
-using Olimpi.core.domain.entities;
-using Olimpi.core.domain.interfaces;
-using Olimpi.features.custom_life_cycle.entities;
+using Olimpi.Core.Data.Services;
+using Olimpi.Core.Domain.Entities;
+using Olimpi.Core.Domain.Interfaces;
+using Olimpi.Features.CustomLifeCycle.Entities;
 
 namespace Olimpi
 {

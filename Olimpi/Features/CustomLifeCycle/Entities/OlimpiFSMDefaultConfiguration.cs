@@ -1,9 +1,10 @@
 using System.Collections.Generic;
-using Olimpi.core.domain.entities;
-using Olimpi.core.domain.interfaces;
-using Olimpi.features.custom_life_cycle.entities.states;
+using Olimpi.Core.Domain.Entities;
+using Olimpi.Core.Domain.Interfaces;
+using Olimpi.Features.CustomLifeCycle.Entities.States;
 
-namespace Olimpi.features.custom_life_cycle.entities{
+namespace Olimpi.Features.CustomLifeCycle.Entities
+{
     public class OlimpiFSMDefaultConfiguration : StateMachineConfigurationBase<OlimpiContext, OlimpiStateId>
     {
         public OlimpiFSMDefaultConfiguration() : base
@@ -18,7 +19,7 @@ namespace Olimpi.features.custom_life_cycle.entities{
                 { OlimpiStateId.Update, new OlimpiUpdateState() },
                 { OlimpiStateId.LateUpdate, new OlimpiLateUpdateState() },
                 { OlimpiStateId.OnApplicationPause, new OlimpiOnApplicationPauseState() },
-                
+
                 { OlimpiStateId.OnApplicationQuit, new OlimpiOnApplicationQuitState() },
                 { OlimpiStateId.OnDisable, new OlimpiOnDisableState() },
                 { OlimpiStateId.OnDestroy, new OlimpiOnDestroyState() }
@@ -43,6 +44,7 @@ namespace Olimpi.features.custom_life_cycle.entities{
 
                 new(OlimpiStateId.OnDestroy, OlimpiStateId.Awake, _=> false),
             }
-        ){}
+        )
+        { }
     }
 }

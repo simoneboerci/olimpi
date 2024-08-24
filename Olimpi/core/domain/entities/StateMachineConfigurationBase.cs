@@ -1,21 +1,21 @@
 using System;
 using System.Collections.Generic;
-using Olimpi.core.domain.interfaces;
+using Olimpi.Core.Domain.Interfaces;
 
-namespace Olimpi.core.domain.entities{
+namespace Olimpi.Core.Domain.Entities{
     public abstract class StateMachineConfigurationBase<TContext, TStateId> : IStateMachineConfiguration<TContext, TStateId> where TContext : IStateMachineContext where TStateId : Enum{
         
-        public Dictionary<TStateId, IState<TContext, TStateId>> States { get; }
-        public List<StateTransition<TContext, TStateId>> Transitions { get; }
+        public IDictionary<TStateId, IState<TContext, TStateId>> States { get; }
+        public IList<StateTransition<TContext, TStateId>> Transitions { get; }
         public TStateId InitialState { get; }
 
         public StateMachineConfigurationBase(
-            Dictionary<TStateId, IState<TContext, TStateId>> states,
+            IDictionary<TStateId, IState<TContext, TStateId>> states,
             TStateId initialState,
-            List<StateTransition<TContext, TStateId>> transitions = null
+            IList<StateTransition<TContext, TStateId>> transitions = null
         ){
             States = states;
-            Transitions = transitions ?? new List<StateTransition<TContext,TStateId>>();
+            Transitions = transitions ?? new List<StateTransition<TContext, TStateId>>();
             InitialState = initialState;
         }
     }

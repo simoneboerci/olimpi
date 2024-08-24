@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Olimpi.core.domain.interfaces;
+using Olimpi.Core.Domain.Interfaces;
 
-namespace Olimpi.core.domain.entities
-{
+namespace Olimpi.Core.Domain.Entities{
     public class StateMachine<TContext, TStateId> : IStateMachine<TContext, TStateId> where TContext : IStateMachineContext where TStateId : Enum
     {
         private readonly TContext _context;

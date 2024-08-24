@@ -1,4 +1,4 @@
-namespace Olimpi.core.domain.interfaces
+namespace Olimpi.Core.Domain.Interfaces
 {
     public interface IStateMachineContext
     {
