@@ -1,4 +1,4 @@
-namespace Olimpi.Features.CustomLifeCycle.Entities
+namespace Olimpi.Features.CustomLifeCycle.Core.Domain.Enums
 {
     public enum OlimpiStateId
     {

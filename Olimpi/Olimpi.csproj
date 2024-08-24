@@ -1,9 +1,36 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="cTrader.Automate" Version="*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StateManagementSystem\StateManagementSystem.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\CustomLifeCycle\API\" />
+    <Folder Include="Features\CustomLifeCycle\API\Controllers\" />
+    <Folder Include="Features\CustomLifeCycle\API\DependencyInjections\" />
+    <Folder Include="Features\CustomLifeCycle\API\Filters\" />
+    <Folder Include="Features\CustomLifeCycle\API\ViewModels\" />
+    <Folder Include="Features\CustomLifeCycle\Core\Application\Commands\" />
+    <Folder Include="Features\CustomLifeCycle\Core\Application\DTOs\" />
+    <Folder Include="Features\CustomLifeCycle\Core\Application\Handlers\" />
+    <Folder Include="Features\CustomLifeCycle\Core\Application\Interfaces\" />
+    <Folder Include="Features\CustomLifeCycle\Core\Application\Queries\" />
+    <Folder Include="Features\CustomLifeCycle\Core\Application\Validators\" />
+    <Folder Include="Features\CustomLifeCycle\Core\Domain\Exceptions\" />
+    <Folder Include="Features\CustomLifeCycle\Core\Domain\Interfaces\" />
+    <Folder Include="Features\CustomLifeCycle\Core\Domain\Specifications\" />
+    <Folder Include="Features\CustomLifeCycle\Core\Domain\ValueObjects\" />
+    <Folder Include="Features\CustomLifeCycle\Infrastructure\" />
+    <Folder Include="Features\CustomLifeCycle\Infrastructure\ExternalServices\" />
+    <Folder Include="Features\CustomLifeCycle\Infrastructure\Persistence\" />
+    <Folder Include="Features\CustomLifeCycle\SharedKernel\" />
   </ItemGroup>
 </Project>
