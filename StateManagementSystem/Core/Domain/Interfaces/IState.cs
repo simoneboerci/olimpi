@@ -1,6 +1,4 @@
-using System;
-
-namespace Olimpi.Core.Domain.Interfaces
+namespace StateManagementSystem.Core.Domain.Interfaces
 {
     public interface IState<TContext, TStateId> where TContext : IStateMachineContext where TStateId : Enum
     {

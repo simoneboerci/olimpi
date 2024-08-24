@@ -1,8 +1,7 @@
-using System;
-using Olimpi.Core.Domain.Entities;
-using Olimpi.Core.Domain.Interfaces;
+using StateManagementSystem.Core.Domain.Entities;
+using StateManagementSystem.Core.Domain.Interfaces;
 
-namespace Olimpi.Core.Data.Services
+namespace StateManagementSystem.Core.Application.Services
 {
     public class StateMachineFactory
     {

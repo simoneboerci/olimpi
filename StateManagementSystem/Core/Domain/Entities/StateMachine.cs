@@ -1,31 +1,30 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Olimpi.Core.Domain.Interfaces;
+using StateManagementSystem.Core.Domain.Interfaces;
+using StateManagementSystem.Core.Domain.ValueObjects;
 
-namespace Olimpi.Core.Domain.Entities{
-    public class StateMachine<TContext, TStateId> : IStateMachine<TContext, TStateId> where TContext : IStateMachineContext where TStateId : Enum
+namespace StateManagementSystem.Core.Domain.Entities
+{
+    public class StateMachine<TContext, TStateId>(
+        TContext context,
+        IDictionary<TStateId, IState<TContext, TStateId>>? states = null,
+        IList<StateTransition<TContext, TStateId>>? transitions = null
+        ) : IStateMachine<TContext, TStateId> where TContext : IStateMachineContext where TStateId : Enum
     {
-        private readonly TContext _context;
+        private readonly TContext _context = context;
 
-        private readonly Dictionary<TStateId, IState<TContext, TStateId>> _states = new();
-        private readonly List<StateTransition<TContext, TStateId>> _transitions = new();
+        private readonly IDictionary<TStateId, IState<TContext, TStateId>> _states = states ?? new Dictionary<TStateId, IState<TContext, TStateId>>();
+        private readonly IList<StateTransition<TContext, TStateId>> _transitions = transitions ?? new List<StateTransition<TContext, TStateId>>();
 
-        private IState<TContext, TStateId> _currentState;
-        private TStateId _currentStateId;
+        private IState<TContext, TStateId>? _currentState;
+        private TStateId? _currentStateId;
 
-        public event Action<TStateId, TStateId> StateChanged;
+        public TContext Context => _context;
+        public TStateId? CurrentStateId => _currentStateId;
 
-        public StateMachine(
-            TContext context,
-            Dictionary<TStateId, IState<TContext, TStateId>> states = null,
-            List<StateTransition<TContext, TStateId>> transitions = null
-        )
-        {
-            _context = context;
-            _states = states ?? new();
-            _transitions = transitions ?? new();
-        }
+        public bool HasContext => _context != null;
+        public bool HasStates => _states != null && _states.Count > 0;
+        public bool HasTransitions => _transitions != null && _transitions.Count > 0;
+
+        public event Action<TStateId?, TStateId>? StateChanged;
 
         public void AddState(TStateId stateId, IState<TContext, TStateId> state)
         {
@@ -62,7 +61,7 @@ namespace Olimpi.Core.Domain.Entities{
             // Invoca la callback del cambio di stato avvenutow
             StateChanged?.Invoke(oldStateId, _currentStateId);
         }
-
+        
         public void Update()
         {
             // Aggiorna lo stato corrente se disponibile

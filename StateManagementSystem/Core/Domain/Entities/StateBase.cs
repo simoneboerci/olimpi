@@ -1,7 +1,6 @@
-using System;
-using Olimpi.Core.Domain.Interfaces;
+using StateManagementSystem.Core.Domain.Interfaces;
 
-namespace Olimpi.Core.Domain.Entities
+namespace StateManagementSystem.Core.Domain.Entities
 {
     public abstract class StateBase<TContext, TStateId> : IState<TContext, TStateId> where TContext : IStateMachineContext where TStateId : Enum
     {

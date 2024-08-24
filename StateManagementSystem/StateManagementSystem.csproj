@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="API\" />
+    <Folder Include="API\Controllers\" />
+    <Folder Include="API\DependencyInjection\" />
+    <Folder Include="API\Filters\" />
+    <Folder Include="API\ViewModels\" />
+    <Folder Include="Core\Application\DTOs\" />
+    <Folder Include="Core\Application\Handlers\" />
+    <Folder Include="Core\Application\Validators\" />
+    <Folder Include="Core\Domain\Specifications\" />
+    <Folder Include="Infrastructure\" />
+    <Folder Include="Infrastructure\ExternalServices\" />
+    <Folder Include="Infrastructure\Persistence\" />
+    <Folder Include="SharedKernel\" />
+  </ItemGroup>
+
+</Project>

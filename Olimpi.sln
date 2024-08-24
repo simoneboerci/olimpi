@@ -1,9 +1,13 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpi", "Olimpi\Olimpi.csproj", "{d2ecd0d2-a59e-4820-a75b-5abfa397e908}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpi", "Olimpi\Olimpi.csproj", "{D2ECD0D2-A59E-4820-A75B-5ABFA397E908}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateManagementSystem", "StateManagementSystem\StateManagementSystem.csproj", "{C7DB0DF9-73CD-4B90-89C0-84083B0D021A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateManagementSystem.Tests", "StateManagementSystem.Tests\StateManagementSystem.Tests.csproj", "{1EF0896E-D132-469D-8BF5-69CDF0ACA76F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{d2ecd0d2-a59e-4820-a75b-5abfa397e908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{d2ecd0d2-a59e-4820-a75b-5abfa397e908}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{d2ecd0d2-a59e-4820-a75b-5abfa397e908}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{d2ecd0d2-a59e-4820-a75b-5abfa397e908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2ECD0D2-A59E-4820-A75B-5ABFA397E908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2ECD0D2-A59E-4820-A75B-5ABFA397E908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2ECD0D2-A59E-4820-A75B-5ABFA397E908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2ECD0D2-A59E-4820-A75B-5ABFA397E908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7DB0DF9-73CD-4B90-89C0-84083B0D021A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7DB0DF9-73CD-4B90-89C0-84083B0D021A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7DB0DF9-73CD-4B90-89C0-84083B0D021A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7DB0DF9-73CD-4B90-89C0-84083B0D021A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF0896E-D132-469D-8BF5-69CDF0ACA76F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF0896E-D132-469D-8BF5-69CDF0ACA76F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF0896E-D132-469D-8BF5-69CDF0ACA76F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF0896E-D132-469D-8BF5-69CDF0ACA76F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

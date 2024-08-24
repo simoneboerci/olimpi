@@ -1,8 +1,6 @@
-using System;
-using System.Collections.Generic;
-using Olimpi.Core.Domain.Entities;
+using StateManagementSystem.Core.Domain.ValueObjects;
 
-namespace Olimpi.Core.Domain.Interfaces
+namespace StateManagementSystem.Core.Domain.Interfaces
 {
     public interface IStateMachineConfiguration<TContext, TStateId> where TContext : IStateMachineContext where TStateId : Enum
     {
