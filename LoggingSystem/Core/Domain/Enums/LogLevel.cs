@@ -1,4 +1,4 @@
-namespace Olimpi.Core.LogSystem.Domain.Enums
+namespace LoggingSystem.Core.Domain.Enums
 {
     public enum LogLevel
     {

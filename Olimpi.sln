@@ -1,9 +1,11 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Olimpi", "Olimpi\Olimpi.csproj", "{d2ecd0d2-a59e-4820-a75b-5abfa397e908}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingSystem", "LoggingSystem\LoggingSystem.csproj", "{29D69F27-A17C-43B8-BECF-71BD55BED2ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{d2ecd0d2-a59e-4820-a75b-5abfa397e908}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{d2ecd0d2-a59e-4820-a75b-5abfa397e908}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{d2ecd0d2-a59e-4820-a75b-5abfa397e908}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29D69F27-A17C-43B8-BECF-71BD55BED2ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29D69F27-A17C-43B8-BECF-71BD55BED2ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29D69F27-A17C-43B8-BECF-71BD55BED2ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29D69F27-A17C-43B8-BECF-71BD55BED2ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

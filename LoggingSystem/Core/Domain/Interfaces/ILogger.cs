@@ -1,6 +1,4 @@
-using System.Threading.Tasks;
-
-namespace Olimpi.Core.LogSystem.Domain.Interfaces
+namespace LoggingSystem.Core.Domain.Interfaces
 {
     public interface ILogger
     {

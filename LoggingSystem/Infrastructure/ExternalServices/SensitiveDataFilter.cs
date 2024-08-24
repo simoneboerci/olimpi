@@ -1,19 +1,17 @@
-using System.Collections.Generic;
+using LoggingSystem.Core.Domain.Interfaces;
 
-namespace Olimpi.Core.LogSystem.Infrastructure.Filters{
-    public class SensitiveDataFilter : ISensitiveDataFiler
+namespace LoggingSystem.Infrastructure.ExternalServices
+{
+    public class SensitiveDataFilter(HashSet<string>? sensitiveWords = null) : ISensitiveDataFiler
     {
-        private readonly HashSet<string> _sensitiveWords;
-
-        public SensitiveDataFilter(HashSet<string> sensitiveWords = null){
-            _sensitiveWords = sensitiveWords ?? new(){ "password", "apiKey", "secret" };
-        }
+        private readonly HashSet<string> _sensitiveWords = sensitiveWords ?? ["password", "apiKey", "secret"];
 
         public string ApplyCensorship(string message, bool isCensored)
         {
             if (!isCensored) return message;
 
-            foreach(var word in _sensitiveWords){
+            foreach (var word in _sensitiveWords)
+            {
                 message = System.Text.RegularExpressions.Regex.Replace(message,
                     $@"(?<={word}=)[^\s&]+",
                     m => new string('*', m.Length),

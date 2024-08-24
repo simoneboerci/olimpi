@@ -1,6 +1,10 @@
-namespace Olimpi.Core.LogSystem.Domain.Entities
+using LoggingSystem.Core.Domain.Entities;
+using LoggingSystem.Core.Domain.Enums;
+using LoggingSystem.Core.Domain.Interfaces;
+
+namespace LoggingSystem.Core.Domain.ValueObjects
 {
-    public class LogEntry : ILogEntry
+    public struct LogEntry : ILogEntry
     {
         public DateTime Timestamp { get; set; }
         public LogLevel Level { get; set; }

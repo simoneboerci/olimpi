@@ -1,7 +1,7 @@
-using System;
-using System.Threading.Tasks;
+using LoggingSystem.Core.Domain.Interfaces;
 
-namespace Olimpi.Core.LogSystem.Infrastructure{
+namespace LoggingSystem.Infrastructure.ExternalServices
+{
     public class ConsoleSink : ILogSink
     {
         public void Write(string formattedLog) => Console.WriteLine(formattedLog);
